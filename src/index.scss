@@ -1,0 +1,61 @@
+@use './mixin.sass' as *;
+@import 'bootstrap/scss/bootstrap'; 
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+  --f-Cormarant: "Cormorant", serif;
+  --f-Inter: "Inter", sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
+  --start-str: color 1s ease-in-out, background 1s ease-in-out;
+
+
+  font-family: var(--f-Inter);
+  // font-size: 1dvw;
+  font-size: clamp(8px, 1dvw, 10px);
+}
+
+
+/* Для плавного перехода между страницами */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+::view-transition-new(root) {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+::view-transition-new(root) {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+body *,
+body a{
+  font-size: 1.6rem;
+}
+
+

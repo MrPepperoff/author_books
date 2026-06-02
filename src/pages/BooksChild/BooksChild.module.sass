@@ -1,0 +1,42 @@
+@import '../../mixin'
+
+.testCard
+    min-height: 20rem
+    width: 100%
+    background: #ccc
+    border-radius: 1rem
+    padding: 1rem
+    display: grid
+    grid-template-areas:'img img img' 'title title date' 'context context context' 'btn . .'
+    @include md
+        grid-template-areas:'img img img' 'title title date' 'context context context' 'btn . .'   
+    @include lg
+        grid-template-areas:'img img img' 'title title date' 'context context context' 'btn . .'
+    @include xl
+        grid-template-areas:'title title img' 'date date img' 'context context img' 'btn . img'
+    @include xxl
+        grid-template-areas:'title date img' 'context context img' 'btn . img'
+    & *
+        color: #000
+    &__title
+        background: #faa
+        grid-area: title
+    &__date
+        background: #afa
+        grid-area: date
+    &__context
+        background: #aaf
+        grid-area: context
+    &__btn
+        background: #ffa
+        grid-area: btn
+    &__img
+        background: #aff
+        grid-area: img
+        max-height: 20rem
+        @include xl
+            max-height: none
+        & img
+            height: 100%
+            width: 100%
+            object-fit: contain

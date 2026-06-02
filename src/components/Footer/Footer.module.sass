@@ -1,0 +1,58 @@
+.footer
+    position: relative
+    // background: url('../../assets/images/site/footer.png')
+    & a
+        color: var(--text) !important
+        &:hover
+            color: var(--text-h) !important
+            text-shadow: 0 0 1rem var(--bg)
+    z-index: 1
+    &::before
+        content: ''
+        position: absolute
+        inset: 0
+        background: url('../../assets/images/site/footer.png')
+        opacity: 0.5
+        background-position: center 85%
+        background-size: cover
+        background-repeat: no-repeat 
+        
+        z-index: 0
+    &__content
+        position: relative
+        z-index: 1
+        padding-top: 7rem 
+    &::after
+        content: ''
+        position: absolute
+        inset: 0   
+        background: linear-gradient(to bottom, var(--bg), transparent)
+.line
+    width: 100%
+    height: 0.1rem
+    background: var(--text-h)
+    margin: 2rem 0
+.shop
+    &__title
+        text-align: center
+        text-transform: uppercase
+        &2
+            text-align: center
+            font-size: 2rem
+
+    &__list
+        flex-direction: column
+        & li
+            text-align: center
+
+
+.nav
+    &__title
+        text-align: center
+    &__list
+        flex-direction: column
+        filter: drop-shadow(0 0 1rem var(--bg))
+
+.copyright
+    margin-bottom: 1rem
+

@@ -1,0 +1,45 @@
+@use '../../mixin' as *
+
+.layout
+    --brand: #FF7A1A
+    --text: #fff
+    --text-h: #ccc
+    --bg: #000
+    --border: #222
+    --bg-2: #444
+    --accent: #aa3bff
+    --accent-bg: rgba(170, 59, 255, 0.1)
+    --accent-border: rgba(170, 59, 255, 0.5)
+    --social-bg: rgba(244, 243, 236, 0.5)
+    --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px
+    
+    
+
+    color: var(--text)
+    background: var(--bg)
+
+    transition: color 1s ease-in-out, background 1s ease-in-out
+    
+
+.wrap
+    min-height: 100dvh
+    display: flex
+    flex-direction: column
+.main
+    flex-grow: 1
+    background: var(--bg)
+    padding-bottom: 6rem
+
+
+.pageTransition
+  transition: all 0.3s ease
+
+
+.fadeOut 
+  opacity: 0
+  transform: translateY(10px)
+
+
+.fadeIn 
+  opacity: 1
+  transform: translateY(0)

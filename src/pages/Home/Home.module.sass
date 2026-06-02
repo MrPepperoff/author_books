@@ -1,0 +1,426 @@
+@use '../../mixin' as *
+
+.home
+    &_color
+        --brand: #FF7A1A
+        --primary: #FF7A1A
+        --second: #CC5A14
+        --glow: #FFB347
+
+        --bg: #0A0A0A
+        --bg-2: #2A1F1A
+        --bg-2-rgb: 42, 31, 26
+        --text: #ececec
+        --text-h: rgb(167, 167, 167)
+        --title-shadow: rgba(233, 230, 230, 0.2)
+        --border: #2e303a
+        --accent: #c084fc
+        --accent-bg: rgba(192, 132, 252, 0.15)
+        --accent-border: rgba(192, 132, 252, 0.5)
+        --social-bg: rgba(47, 48, 58, 0.5)
+        --border-header: transparent
+
+        background: var(--bg-2)
+        font-family: var(--f-Inter)
+
+        color: var(--text)
+        background: var(--bg-2)
+        .hero
+            background: linear-gradient(var(--bg-2), transparent)
+    
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 
+        font-family: var(--f-Cormarant)
+        font-weight: 500
+        color: var(--text)
+        user-select: none
+
+
+    & h1
+        font-size: 5rem
+        font-weight: bolder
+        color: var(--title-shadow)
+    & h2 
+        font-size: 3rem
+        line-height: 118%
+        margin: 0 0 0.8rem
+    & h3
+        font-size: 2.4rem
+        // text-decoration: underline rgba(255, 255, 255, .1)
+        // background: #a00
+        border-bottom: 0.1rem solid var(--brand)
+        margin-right: 20%
+    & p
+        margin: 0
+
+.hero
+    --width: 100%
+    --height: calc(var(--width) / 2.4 )
+    transition: var(--start-str)
+
+    & > div
+        margin: 0 auto 5rem
+        width: var(--width)
+        height: var(--height)
+        & > div
+            padding: 0
+    @include sm
+        --width: 540px
+    @include md
+        --width: 720px
+    @include lg
+        --width: 960px
+    @include xl
+        --width: 1140px
+    @include xxl
+        --width: 1320px
+    
+    &__carusel
+        width: var(--width)
+        height: var(--height)
+        margin: 0 auto
+        padding: 0
+        
+        & > div:first-child
+            top: 100%
+            margin: 0 auto
+            & button
+                border-radius: 50%
+                width: 1.2rem
+                height: 1.2rem
+                margin: 0 1rem
+        &__item
+            padding: 0
+            width: var(--width)
+            height: var(--height)
+        &__link
+            display: block
+            width: var(--width)
+            height: var(--height)
+        & img
+            padding: 0
+            width: var(--width)
+            height: var(--height)
+
+            border-radius: 0.2rem
+            object-position: center center
+            object-fit: cover
+
+.soon
+    padding: 0 2rem
+
+    &__list
+        list-style: none
+        padding: 0
+    &__card
+        position: relative
+        width: 100%
+        border-radius:0 0 1rem 1rem 
+        color: var(--text)
+        cursor: pointer
+        margin-bottom: 1rem
+        transition: transform 0.3s ease
+        background: linear-gradient(transparent 10%, var(--bg-2) 50%, transparent 105%)
+        & a
+            color: var(--text)
+            text-decoration: none
+        &:hover
+            transform: scale(1.03)
+            box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2)
+        
+    &__image
+        display: block
+        width: 100%
+        max-height: 23rem
+        object-fit: contain
+        margin: 0 auto
+        transition: transform 0.5s ease
+        position: relative
+        z-index: 1
+        &__bg
+            position: absolute
+            inset: 0
+            background-size: cover
+            background-position: center center
+            box-shadow: inset 0rem 2rem 0.3rem var(--bg), inset 0rem -2rem 0.3rem  var(--bg-2)
+            filter: blur(0.5rem)
+            z-index: 0
+        &__wrap
+            position: relative
+            max-height: 23rem
+            width: 100%
+
+    
+
+    &__content
+        position: relative
+        z-index: 3
+        padding: 2rem
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        height: 100%
+
+    &__date
+        font-size: 1.2rem
+        opacity: 0.8
+        margin-bottom: 0.6rem
+    &__dateSoon
+        position: absolute
+        z-index: 10
+        padding: 0 1rem
+        top: 7rem
+        right: 0
+        background: var(--primary)
+        border-radius:1rem 0 0 1rem
+        box-shadow: 1rem -0.1rem 0.3rem var(--primary), 1rem 0.1rem 0.3rem var(--primary)
+    &__title
+        font-size: 2rem
+        font-weight: 600
+        margin-bottom: 0.8rem
+        line-height: 1.3
+
+    &__text
+        font-size: 1.4rem
+        padding: 1rem
+        border-radius: 1rem
+        opacity: 1
+        height: auto
+        transition: all 0.3s ease
+
+    &__button
+        margin-top: 1rem
+        font-size: 1.4rem
+        color: #fff
+        text-decoration: underline
+        opacity: 0
+        transition: opacity 0.3s ease
+
+.authorNews
+    color: var(--text)
+    padding: 0rem 2rem
+    position: relative
+    &__h1
+        top: -5rem
+        left: 0
+        position: absolute
+        
+    &__container
+        margin: 0 auto
+        margin-top: 4rem
+    &__title
+        font-size: 3.2rem
+        font-weight: 700
+        margin-bottom: 3rem
+        text-align: center
+
+    &__list
+        list-style: none
+        padding: 0
+        margin: 0
+        display: grid
+        gap: 2rem
+
+    &__item
+        min-height: 20rem
+        width: 100%
+        background: linear-gradient(to bottom, rgba(var(--bg-2-rgb), .4), transparent)
+        border-radius: 1rem
+        padding: 1rem
+        display: grid
+        grid-template-areas:'img img img' 'title title date' 'context context context' 'btn . .'
+        @include md
+            grid-template-areas:'img img img' 'title title date' 'context context context' 'btn . .'   
+        @include lg
+            grid-template-areas:'img img img' 'title title date' 'context context context' 'btn . .'
+        @include xl
+            grid-template-areas:'title title img' 'date date img' 'context context img' 'btn . img'
+        @include xxl
+            grid-template-areas:'title date img img' 'context context img img' 'btn . img img'
+
+        &__title
+            grid-area: title
+
+            display: flex
+            align-items: center
+            justify-content: start
+            font-size: 2rem
+            font-weight: 600
+            margin-bottom: 1rem
+            & h2
+                margin: 0
+        &__date
+            grid-area: date
+
+            padding-right: 1.5rem
+            display: flex
+            align-items: center
+            justify-content: end
+            font-size: 1.4rem
+            color: var(--text-h)
+        &__context
+            grid-area: context
+            padding-right: 1.5rem 
+            font-size: 1.6rem
+            line-height: 1.5
+            margin-bottom: 1rem
+            color: var(--text)
+            & a
+                display: inline-block
+                height: 100%
+                padding: 0.5rem 2rem
+                background: linear-gradient(to bottom, rgba(var(--bg-2-rgb), .4) , transparent 0%)
+                border: 1px solid var(--bg-2)
+                border-radius: 1rem 
+                background-size: 100% 100% 
+                margin: 0rem 0.5rem 0
+                text-align: center
+                color: var(--text)
+                text-decoration: none
+                font-weight: 700
+                transition: 0.1s ease-in-out
+                &:hover
+                    scale: 1.1
+                    background: linear-gradient(to bottom, rgba(var(--bg-2-rgb), .4), transparent)
+                &:active
+                    background: linear-gradient(to top, rgba(var(--bg-2-rgb), .4), transparent)
+                    scale: 0.9
+
+        &__btn
+            grid-area: btn
+            & a
+                display: inline-block
+                height: 100%
+                padding: 0.5rem 8rem
+                background: linear-gradient(to bottom, rgba(var(--bg-2-rgb), .4) , transparent 0%)
+                border: 1px solid var(--bg-2)
+                border-radius: 1rem 
+                background-size: 100% 100% 
+                text-align: center
+                color: var(--text)
+                text-decoration: none
+                font-weight: 700
+                transition: 0.1s ease-in-out
+                &:hover
+                    scale: 1.1
+                    background: linear-gradient(to bottom, rgba(var(--bg-2-rgb), .4), transparent)
+                &:active
+                    background: linear-gradient(to top, rgba(var(--bg-2-rgb), .4), transparent)
+                    scale: 0.9
+        &__img
+            &__wrap
+                grid-area: img
+                position: relative
+
+            max-height: 20rem
+            position: relative
+            width: 100%
+            height: 100%
+            border-radius: 2rem
+            z-index: 1
+
+            @include xl
+                max-height: none
+            & img
+                height: 100%
+                width: 100%
+                object-fit: contain
+            &__bg
+                position: absolute
+                inset: 0
+                background-position: center center
+                background-size: cover
+                background-repeat: no-repeat
+                filter: blur(1rem) sepia(0.5)
+                box-shadow: inset 0 0 3rem var(--bg-2), inset 0 0 3rem var(--bg-2), inset 0 0 3rem var(--bg-2),inset 0 0 30rem var(--bg-2)
+                z-index: 0
+    //     padding: 2rem
+    //     border-radius: 1.2rem
+    //     transition: transform 0.2s ease, background 0.2s ease
+    //     background: linear-gradient(to bottom, rgba(var(--bg-2-rgb), .4), transparent)
+
+    // &__item__title
+    //     font-size: 2rem
+    //     font-weight: 600
+    //     margin-bottom: 1rem
+
+    // &__item__text
+    //     font-size: 1.6rem
+    //     line-height: 1.5
+    //     margin-bottom: 1rem
+    //     color: #cbd5e1
+
+    // &__item__date
+    //     font-size: 1.4rem
+    //     color: #94a3b8
+    // &__item__img
+    //     position: relative
+    //     width: 100%
+    //     height: 100%
+    //     border-radius: 2rem
+    //     z-index: 1
+
+    //     &__bg
+    //         position: absolute
+    //         inset: 0
+    //         background-position: center center
+    //         background-size: cover
+    //         background-repeat: no-repeat
+    //         filter: blur(1rem) sepia(0.5)
+    //         box-shadow: inset 0 0 3rem var(--bg-2), inset 0 0 3rem var(--bg-2), inset 0 0 3rem var(--bg-2),inset 0 0 30rem var(--bg-2)
+    //         z-index: 0
+    //     & img
+    //         width: 100%
+    //         height: 100%
+    //         object-fit: contain
+    //     &__wrap
+    //         position: relative
+    //         order: 0
+    //         height: 20rem
+    //         @include lg
+    //             height: auto
+    //             order: 1
+    &__item__context
+        order: 1
+        @include lg
+            order: 0
+.line
+    margin: 2rem 0
+    text-align: right
+    overflow: hidden
+    filter: drop-shadow(0 0 0.2rem var(--bg)) drop-shadow(0 0 1rem var(--bg-2))
+    
+    & > div
+        position: relative
+        background: url('../../assets/images/site/bg.svg') 0% center no-repeat
+        transition: transform 0.5s ease-in-out
+        &:hover
+            transform: translateX(-1rem)
+        &::after
+            content: ''
+            position: absolute
+            background: var(--bg-2)
+            top: 0
+            left: 100%
+            width: 100%
+            height: 100%
+
+    &__link
+        cursor: pointer
+        width: 100%
+        display: block
+        text-align: right
+        font-family: var(--f-Cormarant)
+        text-decoration: none
+        font-weight: bold
+        color: var(--text)
+        font-size: 2rem
+        padding: 0.5rem 0
+        transition: 0.1s ease-in-out
+        
+        &:hover
+            color: var(--text-h)

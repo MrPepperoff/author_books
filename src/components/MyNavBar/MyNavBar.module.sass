@@ -1,0 +1,28 @@
+.navList
+    & a
+        font-family: var(--f-Cormarant)
+        font-weight: bold
+        font-size: 2rem
+        margin: 0 2rem
+        color: var(--text)
+        filter: drop-shadow(0 0 0.5rem var(--bg)) drop-shadow(0 0 0.5rem var(--bg)) drop-shadow(0 0 0.5rem var(--bg))
+        &:hover
+            color: var(--text-h)
+            filter: drop-shadow(0 0 0.5rem var(--bg)) drop-shadow(0 0 0.5rem var(--bg)) drop-shadow(0 0 0.5rem var(--bg)) drop-shadow(0 0 0.5rem var(--bg))
+.dropdown
+    // background: #a00
+    color: var(--text)
+    // margin-left: 2rem
+    & > a
+        display: flex
+        align-items: center
+    
+    &:hover
+        color: var(--text-h)
+    
+    & > div
+        background: var(--bg)
+        border: 0.1rem solid var(--bg-2)
+.navListFooter
+    flex-direction: column
+
