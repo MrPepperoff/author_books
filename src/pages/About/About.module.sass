@@ -1,5 +1,26 @@
 
 .about
+    &__hero
+        font-size: 1.8rem
+        padding: 4rem 0
+        width: 60%
+        text-align: center
+        color: var(--text-h)
+        font-weight: 500
+    &__title
+        font-size: 7rem
+        text-transform: uppercase
+        font-family: var(--f-Lib)
+        font-weight: bolder
+        color: var(--text)
+        text-align: center
+    &__calligraphy
+        display: flex
+        justify-content: center
+        margin-bottom: 1rem 
+        & svg
+            fill: var(--text)
+            width: 30%
     &__content
         min-height: 100dvh
         background: linear-gradient(var(--bg-2) 2%, var(--bg) 98%)
@@ -7,7 +28,6 @@
             position: relative
             min-height: 100dvh
             padding: 7rem 5rem 20rem 
-            background: var(--bg)
             background: url('../../assets/images/about/polotno6.jpg') center 0% / cover
             
             border-radius: 0 0 0.5rem 0.5rem
@@ -21,10 +41,20 @@
                 box-shadow: inset 0rem 3rem 2rem var(--bg-2), inset 0rem -3rem 2rem var(--bg)
                 z-index: -1
                 pointer-events: none
-            & h1
-                color: #600
-                text-align: center
+    &__line
+        margin-bottom: 1rem 
+        align-items: center
+        justify-content: space-between
 
+        & div 
+            &:nth-child(1),
+            &:nth-child(3)
+                flex-grow: 0
+            &:nth-child(2)
+                flex-grow: 1
+                border-bottom: 1px solid var(--text)
+                height: 0
+                margin: 0 1rem
     &_color
         --bg-2: #C19A7B
         --bg: #D3BE96
@@ -40,16 +70,21 @@
 .right 
     float: right
     width: 40%
+    
 .quote
     margin-top: 1rem
     padding: 1rem
     border: 0.3rem double var(--brand)
 .photo
-    box-shadow: inset 0 0 1rem #a00
+    box-shadow: inset 0 0 1rem #000
+    background: #fff
     padding: 0
     position: relative
-    width: 100%
-    
+    width: 90%
+    margin: 0 auto
+    rotate: 3deg
+    display: flex
+    justify-content: center
     &::after
         content: ''
         position: absolute
@@ -59,9 +94,29 @@
         background: url(../../assets/images/about/mask2.jpg) center center/cover no-repeat
         pointer-events: none
     & img
-        
-        width: 100%
-        
+        padding: 2rem 2rem 6rem
+        --s: 90%
+        width: var(--s)
+        height: var(--s)
+        object-fit: cover
+
+.first
+    &__title
+        position: relative
+        font-size: 2rem
+        display: inline-block
+        &::before 
+            content: ""
+            position: absolute
+            left: 120%
+            top: 50%
+            transform: translateY(-50%)
+            width: 20dvw
+            height: 2px
+            background: var(--text)
+            // border-radius: 2px
+    &__text
+        padding: 0 2rem
 .archive
     &__list
         justify-content: center

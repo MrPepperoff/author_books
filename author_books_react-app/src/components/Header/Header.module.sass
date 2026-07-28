@@ -1,0 +1,56 @@
+.header
+    position: sticky
+    top: 0
+    z-index: 1000
+    background: linear-gradient(to bottom, var(--bg-2),transparent 200%)
+    transition: 0.1s ease-in-out
+    &_scrolled
+        top: -7rem
+        .brand
+             &__first
+                
+                font-size: 1.5rem
+            &__last
+                font-size: 3rem
+                text-transform: uppercase 
+    &__position
+        width: 100%
+.navbar
+    background-color: transparent !important
+    color: var(--text)
+    height: 15rem
+    position: relative
+    top: 0rem
+    transition: 0.1s ease-in-out
+    align-items: center
+    &_scrolled
+        position: relative
+        align-items: flex-end
+        padding-bottom: 1.5rem 
+.brand
+    color: var(--primary)
+    font-weight: bolder
+    transition: 0.1s ease-in-out
+    display: flex
+    flex-direction: column
+    align-items: center
+    & span
+        font-family: var(--f-Cormarant)
+        // font-size: 3rem 
+        // padding-left: 10px
+        line-height: 1
+    &__first
+        // border: 1px solid #a00
+        font-size: 3.5rem
+    &__last
+        font-size: 7rem
+        text-transform: uppercase
+    
+
+    & img
+        width: auto
+        height: 4rem 
+    &:hover
+        color: var(--primary)
+        scale: 1.02
+        filter: drop-shadow(0.2rem 0.2rem 0rem var(--bg))

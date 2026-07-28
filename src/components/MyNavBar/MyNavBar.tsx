@@ -29,7 +29,7 @@ const links = [
     },
     {
         id: 5,
-        name: 'В процессе',
+        name: `В_процессе`,
         link: '/in-progress',
         dropdown: true,
     },

@@ -1,9 +1,11 @@
 @use './mixin.sass' as *;
 @import 'bootstrap/scss/bootstrap'; 
 
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root{
+  --f-Lib: "Libertinus Math", system-ui;
   --f-Cormarant: "Cormorant", serif;
   --f-Inter: "Inter", sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
   --start-str: color 1s ease-in-out, background 1s ease-in-out;
