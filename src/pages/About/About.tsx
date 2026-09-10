@@ -26,19 +26,93 @@ export default function About(){
     const author = 
         {
             name: 'Александр ПИТ',
-            titles:[
-                'Кто я',
-                'Фото из архива',
-                'Заметки редакции',
-                'Вне работы',
-                'Цитата',
-                'Что известно', 
-                'Источники вдохновения'
+            content:[
+                // {
+                //     id: 0,
+                //     title: '',
+                //     text: [
+                //         '',
+                //         ''
+                //     ],
+                // },
+                
+                {
+                    id: 1,
+                    title: 'Об Авторе',
+                    icon: '',
+                    text: [
+                        'Я верю, что хорошие истории не знают возраста. Поэтому пишу книги как для детей, так и для взрослых. Меня зовут Александр, и я рад приветствовать вас на своём сайте.',
+                    ],
+                },
+                {
+                    id: 2,
+                    title:'Кто я',
+                    icon: '',
+                    text:[
+                        'Я занимаюсь разработкой цифровых продуктов и люблю искать простые решения сложных задач.',
+                        'Интересуюсь современными технологиями, дизайном и всем, что помогает делать проекты полезными и удобными для людей.',
+                    ]
+                },
+                {
+                    id: 3,
+                    title: 'Вдохновение',
+                    icon: '',
+                    text: [
+                        'Идеи приходят из разных мест:',
+                        'из книг, путишествий, общения и повседневных мелочей.',
+                        'Я люблю наблюдать, задавать вопросы и учиться новому - это меня вдохновляет'
+                    ],
+                },
+                {
+                    id: 4,
+                    title: 'Мой подход',
+                    icon: '',
+                    text: [
+                        'В каждой работе для меня важны структуры, логика, внимание к деталям. Я верю, что хороший результат складывается из маленьких, но важных шагов.',
+                        'Всегда стараюсь создать то, чем сам могу гордиться.'
+                    ],
+                },
+                {
+                    id: 5,
+                    title: 'Вне работы',
+                    icon: '',
+                    text: [
+                        'Свободное время я посвящаю спорту, чтению и путишествиям.',
+                        'Это помогает перезагружаться, находить баланс и возвращаться к работе с новыми силами.'
+                    ],
+                },
+                {
+                    id: 6,
+                    title: 'Цитата',
+                    icon: '',
+                    text: [
+                        'Важно не бояться пробовать новое и делать шаги вперед. Даже маленький прогресс - это все равно движение.',
+                        ''
+                    ],
+                },
+                
+                {
+                    id: 7,
+                    title: 'Что известно',
+                    icon: '',
+                    text: [
+                        '',
+                        ''
+                    ],
+                },
+                {
+                    id: 8,
+                    title: 'Фото архив',
+                    icon: '',
+                    text: [
+                        '',
+                        ''
+                    ],
+                },
             ],
 
             texts:[
-                'Я верю, что хорошие истории не знают возраста. Поэтому пишу книги как для детей, так и для взрослых. Меня зовут Александр, и я рад приветствовать вас на своём сайте.',
-                'родился в 1989 году в промышленном городе, где серые дворы и однотипные дома формировали особую тишину — ту самую, в которой человек чаще остаётся наедине с собой. Его ранние годы прошли на фоне перемен и нестабильности, что рано научило его замечать детали и чувствовать скрытое напряжение в обыденных вещах.',
+                
                 'К письму он впервые обратился в 2005 году, ещё школьником. Это были неровные, местами наивные тексты, но уже тогда в них чувствовалось главное — стремление не к красивому слогу, а к точности переживания.',
                 'Период с 2007 по 2012 год стал временем отдаления от литературы. Он выбрал практичное образование, стараясь вписаться в предсказуемую жизнь. Однако именно в эти годы внутри него накапливался тот материал, который позже ляжет в основу его книг: наблюдения за людьми, ощущение внутренней разобщённости и поиск смысла в повседневности.',
                 'Возвращение к письму произошло в 2016 году — на фоне личного кризиса, который он позже назовёт «точкой сборки». С этого момента его тексты приобретают жёсткость, честность и ту сдержанную глубину, за которую его впоследствии полюбят читатели.',
@@ -127,12 +201,24 @@ export default function About(){
                                     <img src={author.images[0].src} alt={author.name} />
                                 </div>
                                 <div className={style.quote}>
-                                    <h3>{author.titles[4]}:</h3>
-                                    <p><i>{author.texts[10]}</i></p>
-                                </div>   
+                                    <h3>{author.content[5].title}:</h3>
+                                    <p><i>{author.content[5].text}</i></p>
+                                </div>  
+                                {author.content.map((item)=>
+                                (item.id != 1 && item.id % 2 != 0)?
+                                    <div className="" key={item.id}>
+                                        <h3 className={style.first__title}>{item.title}</h3>
+                                        {item.text.map((el)=>
+                                            <p className={style.first__text}>
+                                                {el}
+                                            </p>
+                                        )}
+                                    </div>    
+                                    :''
+                                )} 
                             </div>
                             
-                            <h1 className={style.about__title}>Об Авторе</h1>
+                            <h1 className={style.about__title}>{author.content[0].title}</h1>
                             <div className={style.about__calligraphy}>
                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 105">
                                     <g transform="translate(0.000000,105.000000) scale(0.100000,-0.100000)" stroke="none">
@@ -141,36 +227,27 @@ export default function About(){
                                 </svg>
                             </div>
                             <div className={style.about__hero}>
-                                {author.texts[0]}
+                                {author.content[0].text[0]}
                             </div>
-                            <div className={style.about__first +' '+ style.first}>
-                                <h3 className={style.first__title}>{author.titles[0]}</h3>
-                                <p className={style.first__text}>
-                                   {author.texts[1]}
-                                </p>
-                            </div>
-                            <div className={style.about__first +' '+ style.first}>
-                                <h3 className={style.first__title}>{author.titles[2]}</h3>
-                                <p className={style.first__text}>
-                                   {author.texts[2]}
-                                </p>
-                            </div>
-                            <p>
-                                {author.texts[2]}
-                                {author.texts[2]}
-                                {author.texts[2]}
-                                {author.texts[2]}
-                                {author.texts[2]}
-                                {author.texts[2]}
-                                {author.texts[2]}
-                                {author.texts[2]}
-                                {author.texts[2]}
-                                {author.texts[2]}
-                                {author.texts[2]}
-                            </p>
+                            {author.content.map((item)=>
+                                (item.id != 1 && item.id % 2 != 1 && item.id != 8 && item.id != 6)?
+                                    <div className="" key={item.id}>
+                                        <h3 className={style.first__title}>{item.title}</h3>
+                                        
+                                        {item.text.map((el)=>
+                                            <p className={style.first__text}>
+                                                {el}
+                                            </p>
+                                        )}
+                                        
+                                    </div>    
+                                :''
+                            )}
+                            
+                            
                         </Col>
                         <Col className={style.archive}>
-                            <h3 className={style.archive__title}>{author.titles[1]}</h3>
+                            <h3 className={style.archive__title}>{author.content[7].title}</h3>
                             <Row className={style.archive__list}>
                                 {author.images.map((img)=>
                                     (img.id != 1 && img.id <= 9  &&
@@ -219,7 +296,7 @@ export default function About(){
                             <h3>------</h3>
                             <Row>
                                 <Col xs={6} className={style.doubleBlock__left}>
-                                    <h3>{author.titles[3]}</h3>
+                                    <h3>{author.content[3].title}</h3>
                                     <p>
                                         {author.texts[2]}
                                         {author.texts[2]}
@@ -228,7 +305,7 @@ export default function About(){
                                     </p>
                                 </Col>
                                 <Col xs={6} className={style.doubleBlock__right}>
-                                    <h3>{author.titles[5]}</h3>
+                                    <h3>{author.content[5].title}</h3>
                                     <p>
                                         {author.texts[2]}
                                         {author.texts[2]}
